@@ -170,7 +170,20 @@
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="cardButtons" destination="f3Z-lt-iqj" id="ZGi-fj-zen"/>
                         <outlet property="flipsLabel" destination="tPf-xU-API" id="Fka-k2-dS9"/>
+                        <outletCollection property="cardButtons" destination="f3Z-lt-iqj" id="bAb-l2-2Hy"/>
+                        <outletCollection property="cardButtons" destination="Ya3-ZP-cDb" id="gHz-oW-dTE"/>
+                        <outletCollection property="cardButtons" destination="orB-4o-q25" id="dmd-Rq-trq"/>
+                        <outletCollection property="cardButtons" destination="qln-UO-8AI" id="q2s-zs-2tu"/>
+                        <outletCollection property="cardButtons" destination="2MB-v6-ZD8" id="Rze-05-KbF"/>
+                        <outletCollection property="cardButtons" destination="kY2-ot-R47" id="i6T-Qk-a2s"/>
+                        <outletCollection property="cardButtons" destination="qEg-vv-iiS" id="LsW-CS-zuT"/>
+                        <outletCollection property="cardButtons" destination="nIR-qR-R8p" id="Nue-fS-g7g"/>
+                        <outletCollection property="cardButtons" destination="KB3-yM-2fC" id="2lM-Ah-qwJ"/>
+                        <outletCollection property="cardButtons" destination="TJv-iJ-C2j" id="soK-RS-Mo0"/>
+                        <outletCollection property="cardButtons" destination="s2B-Kk-Px5" id="MSW-26-Rje"/>
+                        <outletCollection property="cardButtons" destination="Sqx-20-nM8" id="2mS-Fm-kNo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
