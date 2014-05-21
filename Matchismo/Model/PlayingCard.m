@@ -55,7 +55,7 @@
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
-    
+    NSLog(@"%d", [otherCards count]);
     if ([otherCards count] == 1) {
         PlayingCard *otherCard = [otherCards firstObject];
         if (otherCard.rank == self.rank) {
@@ -65,7 +65,7 @@
         }
     } else if ([otherCards count] == 2) {
         PlayingCard *firstCard = [otherCards firstObject];
-        PlayingCard *secondCard = [otherCards lastObject];
+        PlayingCard *secondCard = [otherCards objectAtIndex:1];
         //Match three
         if (firstCard.rank == self.rank && secondCard.rank == self.rank) {
             score += 12;

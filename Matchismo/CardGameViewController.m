@@ -26,7 +26,7 @@
 - (CardMatchingGame *)game
 {
     if (!_game) {
-        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck] matchType:2];
     }
     return _game;
 }
@@ -52,6 +52,7 @@
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     }
+    
 }
 
 - (NSString *)titleForCard:(Card *)card
@@ -66,14 +67,14 @@
 
 - (IBAction)touchNewGameButton:(UIButton *)sender {
     self.segmentedControl.enabled = NO;
-    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck] matchType:self.game.matchType];
     [self updateUI];
     self.segmentedControl.enabled = YES;
 }
 
 - (IBAction)changeMatchType:(UISegmentedControl *)sender {
     self.segmentedControl.enabled = NO;
-    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck] matchType:2];
     if (sender.selectedSegmentIndex == 0) {
         [self.game changeGameModeToMatchTwo];
     } else {

@@ -14,11 +14,16 @@
 //designated initializer
 - (instancetype)initWithCardCount:(NSUInteger)count
                          usingDeck:(Deck *)deck;
+- (instancetype)initWithCardCount:(NSUInteger)count
+                        usingDeck:(Deck *)deck
+                        matchType:(NSUInteger)matchType;
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
 - (void)changeGameModeToMatchTwo;
 - (void)changeGameModeToMatchThree;
 
 @property (nonatomic, readonly) NSUInteger score;
+@property (nonatomic, readonly) NSUInteger matchType;
+@property (nonatomic, strong) NSString *lastResult;
 
 @end
