@@ -63,6 +63,33 @@
         } else if ([otherCard.suit isEqualToString:self.suit]) {
             score += 1;
         }
+    } else if ([otherCards count] == 2) {
+        PlayingCard *firstCard = [otherCards firstObject];
+        PlayingCard *secondCard = [otherCards lastObject];
+        //Match three
+        if (firstCard.rank == self.rank && secondCard.rank == self.rank) {
+            score += 12;
+        } else if ([firstCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:self.suit]) {
+            score += 5;
+        }
+        //Match first card
+        else if (firstCard.rank == self.rank) {
+            score += 4;
+        } else if ([firstCard.suit isEqualToString:self.suit]) {
+            score += 1;
+        }
+        //Match second card
+        else if (secondCard.rank == self.rank) {
+            score += 4;
+        } else if ([secondCard.suit isEqualToString:self.suit]) {
+            score += 1;
+        }
+        //Match other card together
+        else if (secondCard.rank == firstCard.rank) {
+            score += 4;
+        } else if ([secondCard.suit isEqualToString:firstCard.suit]) {
+            score += 1;
+        }
     }
     
     return score;

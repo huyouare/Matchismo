@@ -16,6 +16,8 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
 
 @end
 
@@ -60,6 +62,25 @@
 - (UIImage *)backgroundImageForCard:(Card *)card
 {
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
+}
+
+- (IBAction)touchNewGameButton:(UIButton *)sender {
+    self.segmentedControl.enabled = NO;
+    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    [self updateUI];
+    self.segmentedControl.enabled = YES;
+}
+
+- (IBAction)changeMatchType:(UISegmentedControl *)sender {
+    self.segmentedControl.enabled = NO;
+    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    if (sender.selectedSegmentIndex == 0) {
+        [self.game changeGameModeToMatchTwo];
+    } else {
+        [self.game changeGameModeToMatchThree];
+    }
+    [self updateUI];
+    self.segmentedControl.enabled = YES;
 }
 
 //- (void)viewDidLoad

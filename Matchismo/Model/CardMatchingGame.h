@@ -16,6 +16,8 @@
                          usingDeck:(Deck *)deck;
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
+- (void)changeGameModeToMatchTwo;
+- (void)changeGameModeToMatchThree;
 
 @property (nonatomic, readonly) NSUInteger score;
 
