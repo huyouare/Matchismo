@@ -64,12 +64,13 @@ static const int COST_TO_CHOOSE = 1;
                     } else {
                         self.score -= MISMATCH_PENALTY;
                         otherCard.chosen = NO;
-                        break; //only 2 for now
+                        
                     }
+                    break; //only 2 for now
                 }
-                self.score -= COST_TO_CHOOSE;
-                card.chosen = YES;
             }
+            self.score -= COST_TO_CHOOSE;
+            card.chosen = YES;
         }
     }
 }
