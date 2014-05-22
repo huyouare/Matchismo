@@ -98,6 +98,7 @@ static const int COST_TO_CHOOSE = 1;
                             self.lastResult = [NSString stringWithFormat:@"Matched %@ and %@ for %d points.", card.contents, otherCard.contents, (matchScore * MATCH_BONUS)];
                         } else {
                             self.score -= MISMATCH_PENALTY;
+                            card.chosen = NO;
                             otherCard.chosen = NO;
                             self.lastResult = [NSString stringWithFormat:@"%@ and %@ don't match! %d point penalty.", card.contents, otherCard.contents, (MISMATCH_PENALTY)];
                         }
@@ -145,7 +146,7 @@ static const int COST_TO_CHOOSE = 1;
                         self.score -= MISMATCH_PENALTY;
                         Card *firstCard = [cardArray objectAtIndex:0];
                         Card *secondCard = [cardArray objectAtIndex:1];
-                        //card.chosen = NO;
+                        card.chosen = NO;
                         firstCard.chosen = NO;
                         secondCard.chosen = NO;
                         self.lastResult = [NSString stringWithFormat:@"%@, %@ and %@ don't match! %d point penalty.", card.contents, firstCard.contents, secondCard.contents, (MISMATCH_PENALTY)];
