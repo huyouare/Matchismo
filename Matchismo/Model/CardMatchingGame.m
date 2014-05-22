@@ -136,14 +136,19 @@ static const int COST_TO_CHOOSE = 1;
                     if (matchScore) {
                         self.score += matchScore * MATCH_BONUS;
                         card.matched = YES;
-                        for (Card *c in cardArray) {
-                            c.matched = YES;
-                        }
+                        Card *firstCard = [cardArray objectAtIndex:0];
+                        Card *secondCard = [cardArray objectAtIndex:1];
+                        firstCard.matched = YES;
+                        secondCard.matched = YES;
+                        self.lastResult = [NSString stringWithFormat:@"Matched %@, %@ and %@ for %d points.", card.contents, firstCard.contents, secondCard.contents, (matchScore * MATCH_BONUS)];
                     } else {
                         self.score -= MISMATCH_PENALTY;
-                        for (Card *c in cardArray) {
-                            c.chosen = NO;
-                        }
+                        Card *firstCard = [cardArray objectAtIndex:0];
+                        Card *secondCard = [cardArray objectAtIndex:1];
+                        //card.chosen = NO;
+                        firstCard.chosen = NO;
+                        secondCard.chosen = NO;
+                        self.lastResult = [NSString stringWithFormat:@"%@, %@ and %@ don't match! %d point penalty.", card.contents, firstCard.contents, secondCard.contents, (MISMATCH_PENALTY)];
                     }
                 } else if ([cardArray count] == 1) {
                     //Two cards currently selected
