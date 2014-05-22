@@ -52,7 +52,7 @@
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     }
-    
+    self.resultsLabel.text = self.game.lastResult;
 }
 
 - (NSString *)titleForCard:(Card *)card

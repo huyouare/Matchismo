@@ -55,7 +55,6 @@
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
-    NSLog(@"%d", [otherCards count]);
     if ([otherCards count] == 1) {
         PlayingCard *otherCard = [otherCards firstObject];
         if (otherCard.rank == self.rank) {
