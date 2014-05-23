@@ -23,7 +23,7 @@ static const int MISMATCH_PENALTY = 2;
 static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOSE = 1;
 
-//@synthesize lastResult = _lastResult;
+@synthesize lastResult = _lastResult;
 
 - (NSMutableArray *)cards
 {
@@ -78,10 +78,14 @@ static const int COST_TO_CHOOSE = 1;
     return _lastResult;
 }
 
-//- (void)setLastResult:(NSString *)lastResult
-//{
-//    [self.resultsArray addObject:lastResult];
-//}
+- (void)setLastResult:(NSString *)lastResult
+{
+    _lastResult = lastResult;
+    [self.resultsArray addObject:lastResult];
+    if ([self.resultsArray count] > 10) {
+        [self.resultsArray removeObjectAtIndex:0];
+    }
+}
 
 - (void)changeGameModeToMatchTwo
 {
@@ -96,6 +100,7 @@ static const int COST_TO_CHOOSE = 1;
 
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
+    //TWO-CARD MATCH
     if (self.matchType == 2) {
         Card *card = [self cardAtIndex:index];
         if (!card.isMatched) {
@@ -104,6 +109,7 @@ static const int COST_TO_CHOOSE = 1;
                 card.chosen = NO;
                 self.lastResult = @"";
             } else {
+                BOOL wasMatched = NO;
                 //match against other cards
                 for (Card * otherCard in self.cards) {
                     if (otherCard.isChosen && !otherCard.isMatched) {
@@ -119,10 +125,13 @@ static const int COST_TO_CHOOSE = 1;
                             otherCard.chosen = NO;
                             self.lastResult = [NSString stringWithFormat:@"%@ and %@ don't match! %d point penalty.", card.contents, otherCard.contents, (MISMATCH_PENALTY)];
                         }
+                        wasMatched = YES;
                         break; //only 2 for now
-                    } else {
-                        self.lastResult = [NSString stringWithFormat:@"%@ selected.", card.contents];
                     }
+                }
+                
+                if (!wasMatched) {
+                    self.lastResult = [NSString stringWithFormat:@"%@ selected.", card.contents];
                 }
                 
                 self.score -= COST_TO_CHOOSE;
@@ -130,7 +139,7 @@ static const int COST_TO_CHOOSE = 1;
             }
         }
     }
-    
+    //THREE-CARD MATCH
     else if (self.matchType == 3) {
         Card *card = [self cardAtIndex:index];
         if (!card.isMatched) {

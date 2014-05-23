@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
+@property (weak, nonatomic) IBOutlet UISlider *resultsSlider;
 
 @end
 
@@ -82,6 +83,21 @@
     }
     [self updateUI];
     self.segmentedControl.enabled = YES;
+}
+
+- (IBAction)sliderChanged:(UISlider *)sender {
+    float currentValue = sender.value;
+    NSMutableArray *resultsArray = self.game.resultsArray;
+    if ([resultsArray count] > 0) {
+        int index = (int)(currentValue * [resultsArray count]);
+        NSLog(@"%d", index);
+        //PREVENT INDEX OUT OF BOUNDS
+        if (index == [resultsArray count]) {
+            index -= 1;
+        }
+        NSString *result = [resultsArray objectAtIndex:index];
+        self.resultsLabel.text = result;
+    }
 }
 
 //- (void)viewDidLoad

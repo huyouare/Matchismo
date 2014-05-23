@@ -414,15 +414,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dOg-YQ-BIc">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dOg-YQ-BIc">
                                 <rect key="frame" x="118" y="435" width="84" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="9Zo-5B-YYE"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="resultsLabel" destination="5OK-XF-9g3" id="WRj-3f-t3x"/>
+                        <outlet property="resultsSlider" destination="dOg-YQ-BIc" id="46Q-ut-5vO"/>
                         <outlet property="scoreLabel" destination="eXG-E6-0w0" id="eAd-iT-Ydc"/>
                         <outlet property="segmentedControl" destination="Z5g-5p-8XZ" id="6qu-1u-pwo"/>
                         <outletCollection property="cardButtons" destination="Ya3-ZP-cDb" id="gHz-oW-dTE"/>
