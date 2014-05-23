@@ -12,6 +12,8 @@
 @property (nonatomic, readwrite) NSUInteger score;
 @property (nonatomic, strong) NSMutableArray *cards; //of Card
 @property (nonatomic, readwrite) NSUInteger matchType;
+@property (nonatomic, strong, readwrite) NSString *lastResult;
+@property (nonatomic, strong, readwrite) NSMutableArray *resultsArray;
 
 @end
 
@@ -20,6 +22,8 @@
 static const int MISMATCH_PENALTY = 2;
 static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOSE = 1;
+
+//@synthesize lastResult = _lastResult;
 
 - (NSMutableArray *)cards
 {
@@ -58,6 +62,14 @@ static const int COST_TO_CHOOSE = 1;
     return self;
 }
 
+- (NSArray *)resultsArray
+{
+    if (!_resultsArray) {
+        _resultsArray = [[NSMutableArray alloc] init];
+    }
+    return _resultsArray;
+}
+
 - (NSString *)lastResult
 {
     if (!_lastResult) {
@@ -65,6 +77,11 @@ static const int COST_TO_CHOOSE = 1;
     }
     return _lastResult;
 }
+
+//- (void)setLastResult:(NSString *)lastResult
+//{
+//    [self.resultsArray addObject:lastResult];
+//}
 
 - (void)changeGameModeToMatchTwo
 {

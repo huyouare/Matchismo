@@ -24,6 +24,7 @@
 
 @property (nonatomic, readonly) NSUInteger score;
 @property (nonatomic, readonly) NSUInteger matchType;
-@property (nonatomic, strong) NSString *lastResult;
+@property (nonatomic, strong, readonly) NSString *lastResult;
+@property (nonatomic, strong, readonly) NSMutableArray *resultsArray;
 
 @end
