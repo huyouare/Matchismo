@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831987E819346D4900ADC559 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 831987E719346D4900ADC559 /* SetCard.m */; };
 		836A9ABF192AD6F500FF2D4C /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 836A9AB7192AD6F400FF2D4C /* PlayingCardDeck.m */; };
 		836A9AC0192AD6F500FF2D4C /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 836A9AB8192AD6F400FF2D4C /* Card.m */; };
 		836A9AC1192AD6F500FF2D4C /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 836A9ABA192AD6F400FF2D4C /* Deck.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		831987E619346D4900ADC559 /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCard.h; path = Model/SetCard.h; sourceTree = "<group>"; };
+		831987E719346D4900ADC559 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCard.m; path = Model/SetCard.m; sourceTree = "<group>"; };
 		836A9AB7192AD6F400FF2D4C /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
 		836A9AB8192AD6F400FF2D4C /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
 		836A9AB9192AD6F400FF2D4C /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				836A9ABA192AD6F400FF2D4C /* Deck.m */,
 				836A9ABD192AD6F400FF2D4C /* PlayingCard.h */,
 				836A9ABC192AD6F400FF2D4C /* PlayingCard.m */,
+				831987E619346D4900ADC559 /* SetCard.h */,
+				831987E719346D4900ADC559 /* SetCard.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				83EC5FE11929E6960017B310 /* CardGameAppDelegate.m in Sources */,
 				836A9AC1192AD6F500FF2D4C /* Deck.m in Sources */,
 				83EC5FDD1929E6960017B310 /* main.m in Sources */,
+				831987E819346D4900ADC559 /* SetCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
