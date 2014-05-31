@@ -88,23 +88,22 @@
     }
 }
 
-- (int)match:(NSArray *)otherCards
-{
-    int score = 0;
-    if ([otherCards count] == 2) {
-        SetCard *firstCard = [otherCards firstObject];
-        SetCard *secondCard = [otherCards objectAtIndex:1];
-        
-        
-        
-//        //Match three
-//        if (firstCard.rank == self.rank && secondCard.rank == self.rank) {
-//            score += 12;
-//        } else if ([firstCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:self.suit]) {
-//            score += 5;
-//        }
-
-    }
-}
+//- (int)match:(NSArray *)otherCards
+//{
+//    int score = 0;
+//    if ([otherCards count] == 2) {
+//        SetCard *firstCard = [otherCards firstObject];
+//        SetCard *secondCard = [otherCards objectAtIndex:1];
+//
+//        
+////        //Match three
+////        if (firstCard.rank == self.rank && secondCard.rank == self.rank) {
+////            score += 12;
+////        } else if ([firstCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:self.suit]) {
+////            score += 5;
+////        }
+//
+//    }
+//}
 
 @end
